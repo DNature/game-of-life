@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Game of Life
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This project was created with Typescript by Divine Hycenth to solve a coding challenge.
 
-## Available Scripts
+You can find the `Game of life` module in the `src` directory of this repository. This module is the core engine of this application and can be used on any form of javascript project.
 
-In the project directory, you can run:
+## Usage
 
-### `yarn start`
+### Import Game of life
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```js
+import GameOfLife from 'src/gameOfLife';
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Instantiate a new Game of life class
 
-### `yarn test`
+The `GameOfLife` class takes requires a parameter which is an object with properties `rows` and `column` and both values should be numbers.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
+const gameOfLife = new GameOfLife({ rows: 20, columns: 20 });
+```
 
-### `yarn build`
+### Available methods
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. ComputeGrid: This method is essentially the core logic of this module and it accepts an argument of `grid` which is an array.
+2. generateRandomGrid: This module returns an `Array` of arrays with randomly generated 1's and 0's
+3. generateEmptyGrid: This method returns an `Array` of arrays with zeroes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Complete Example
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+import GameOfLife from 'src/gameOfLife';
 
-### `yarn eject`
+const gol = new GameOfLife({ rows: 50, columns: 50 });
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+let grid = [];
+gol.generateRandomGrid(); // => fils out the grid with 1's and 0's
+gol.computeGrid(grid); // => Starts the game of life engine
+gol.generateEmptyGrid(); // => Resets the grid system.
+```

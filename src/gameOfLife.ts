@@ -10,7 +10,7 @@ class GameOfLife {
 	rows: number;
 
 	// { rows = 20, columns = 20 }
-	constructor({ rows = 20, columns = 20 }) {
+	constructor({ rows = 10, columns = 10 }) {
 		this.operations = [
 			[0, 1],
 			[0, -1],
@@ -71,8 +71,8 @@ class GameOfLife {
 	generateEmptyGrid() {
 		const rows = [];
 
-		for (let i = 0; i < 20; i++) {
-			rows.push(Array.from(Array(20), () => 0));
+		for (let i = 0; i < this.rows; i++) {
+			rows.push(Array.from(Array(this.columns), () => 0));
 		}
 
 		return rows;
