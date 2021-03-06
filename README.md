@@ -36,5 +36,5 @@ const gol = new GameOfLife({ rows: 50, columns: 50 });
 let grid = [];
 gol.generateRandomGrid(); // => fils out the grid with 1's and 0's
 gol.computeGrid(grid); // => Starts the game of life engine
-gol.generateEmptyGrid(); // => Resets the grid system.
+gol.generateEmptyGrid(); // => generates an empty grid.
 ```
