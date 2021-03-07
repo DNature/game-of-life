@@ -1,4 +1,4 @@
-import GameOfLife from "../gameOfLife";
+import GameOfLife from "../";
 
 
 const items = 5

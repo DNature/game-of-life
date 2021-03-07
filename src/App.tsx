@@ -5,7 +5,7 @@ import { produce } from 'immer';
 import GolExample from './gol.gif';
 import GameOfLife from './gameOfLife';
 
-const gol = new GameOfLife({ rows: 20, columns: 20 });
+const gol = new GameOfLife({ rows: 15, columns: 15 });
 
 function App() {
 	const [grid, setGrid] = useState(() => gol.generateEmptyGrid());
@@ -74,7 +74,7 @@ function App() {
 					</button>
 				</div>
 
-				<div className='mx-auto w-full px-6'>
+				<div className='grid place-content-center px-4'>
 					<div
 						style={{ gridTemplateColumns: `repeat(${gol.columns}, 20px)` }}
 						className='grid'
@@ -101,8 +101,7 @@ function App() {
 						)}
 					</div>
 				</div>
-
-				<div className='mt-24 text-center'>
+				<div className='mt-16 text-center'>
 					<h2 className='text-2xl font-semibold'>How to Use</h2>
 
 					<div className='mt-6 shadow-2xl'>
